@@ -3,6 +3,11 @@
 // Implement array Reduce method.
 
 function myReduce(arr, func, val) {
+
+	if (!Array.isArray(arr)) {
+		return "The first argument of function mut be an arry and the second - call back function!";
+	}
+
 	let aggr = val;
 	let index = 0;
 
