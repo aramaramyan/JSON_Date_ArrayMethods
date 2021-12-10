@@ -25,16 +25,22 @@ const users1 = [
 	},
 	{
 		username: "Nil Armstrong",
-		lang: "ENG",
+		lang: "ENG"
 	},
 ];
 
-function filterUsers(obj) {
-	if (typeof (obj) !== "object" || obj === null || !Array.isArray(obj)) {
-		return "The argument of function mut be an array with objects in it!";
+function filterUsers(arr) {
+	if (arguments.length !== 1 || !Array.isArray(arr)) {
+		return "The argument of function mut be an arry with objects in it!";
 	}
 
-	return obj.filter(person => typeof (person.lang) === "string" && person.lang.toLowerCase() !== "ru");
+	for (let i = 0; i < arr.length; i++) {
+		if (typeof (arr[i]) !== "object" || arr[i] === null || Array.isArray(arr[i])) {
+			return `Array item on index: ${i} is not an object!`
+		}
+	}
+
+	return arr.filter(person => typeof (person.lang) === "string" && person.lang.toLowerCase() !== "ru");
 }
 
 console.log("Task 2: ", filterUsers(users1)); // [{ username: "Nil Armstrong, lang: "ENG" }]
