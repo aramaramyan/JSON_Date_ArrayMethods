@@ -10,7 +10,7 @@ function myForEach(arr, func) {
 	const newArr = [];
 
 	for (let i = 0; i < arr.length; i++) {
-		newArr[i] = func(arr[i]);
+		newArr[i] = func(arr[i], i, arr);
 	}
 
 	return newArr;
